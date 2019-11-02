@@ -1,3 +1,190 @@
-// Place all the styles related to the games controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+* If support for old browsers is a concern, use SCSS variables:
+* https://caniuse.com/#feat=css-variables
+* https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+*/
+
+:root {
+  --black: #555;
+  --blue: #0099ff;
+  --dark-gray: #333;
+  --disabled-light-green: rgba(71, 193, 142, 0.447);
+  --light-gray: #999;
+  --light-green: #47c18e;
+  --medium-gray: #999;
+  --medium-green: #41b082;
+  --very-light-gray: #e6e6e6;
+  --white: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;  /* scaling down so that 1rem equals to 10px */
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 auto;
+  width: 97%;
+}
+
+main {
+  margin-bottom: 0;
+  margin-top: 5rem;
+}
+
+h1 {
+  border-bottom: 0.2rem solid var(--very-light-gray);
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+img {
+  height: auto;
+  margin: 0.3rem;
+  max-height: 4.4rem;
+  max-width: 4.4rem;
+  width: auto;
+}
+
+table {
+  width: 100%;
+}
+
+/*
+* as much as I dislike using !important,
+* UIKit's selector specificity wins over these generic selectors
+*/
+
+tr {
+  border-bottom: 0.2rem solid var(--very-light-gray);
+  margin: 0 !important;
+  padding: 3.5rem 0 !important;
+}
+
+td {
+  // overwriting UIKit
+  margin-right: 0.5rem !important;
+  padding: 0 !important;
+  text-align: center;
+
+  &:last-child {
+    margin-right: 0 !important;
+  }
+}
+
+.secondary-text {
+  color: var(--medium-gray);
+  color: var(--light-gray);
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.price {
+  align-items: center;
+  color: var(--light-green);
+  display: flex;
+  font-size: 1.8rem;
+  /* on the mockup, price per minute is aligning towards the left,
+  * but I placed it on the center to give it more breathing room
+  * to align it to the left or the right of its container,
+  * change justify-content to flex-start or flex-end, respectively
+  */
+  justify-content: center;
+}
+
+.button {
+  background-color: var(--light-green);
+  border-radius: 0.4rem;
+  border: 0;
+  color: var(--white);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: inherit; /* overwriting normalize.css */
+  min-width: 22rem;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+
+  &:active,
+  &:hover {
+    background-color: var(--medium-green);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--disabled-light-green);
+  }
+}
+
+.counter {
+  background-color: var(--very-light-gray);
+  border-radius: 0.3rem;
+  border: 0;
+  color: var(--dark-gray);
+  display: inline-block;
+  font-size: 1.6rem;
+  height: 4.5rem;
+  margin: 0;
+  outline: 0;
+  padding: 1rem;
+  text-align: center;
+  width: 4.5rem;
+}
+
+.counter-black {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.bottom {
+  background-color: var(--very-light-gray);
+  bottom: 0;
+  color: var(--black);
+  font-size: 1.6rem;
+  height: 7.5rem;
+  left: 0;
+  padding: 2rem;
+  position: absolute;
+  text-align: right;
+  width: 100%;
+}
+
+#final-price {
+  margin-right: 1.5rem;
+}
+
+// overwriting UIKit
+.uk-grid {
+  margin-left: 0;
+}
+
+// overwriting UIKit
+.uk-width-extra {
+  width: 12%;
+}
+
+// functional (AKA atomic) CSS
+.blue {
+  color: var(--blue);
+}
+
+.align-left {
+  text-align: left;
+}
