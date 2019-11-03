@@ -36,10 +36,10 @@ body {
   font-weight: 700;
   line-height: 1.5;
   margin: 0 auto;
-  width: 97%;
 }
 
 main {
+  width: 97%;
   margin-bottom: 0;
   margin-top: 5rem;
 }
@@ -168,6 +168,15 @@ td {
 
 #final-price {
   margin-right: 1.5rem;
+}
+
+.bottom-parent {
+  border-top: 0.2rem solid var(--white);
+  height: 7.5rem;
+  overflow: hidden;
+  position: relative;
+  top: 26vh; // hack
+  transition: 0.4s height ease-in-out;
 }
 
 // overwriting UIKit

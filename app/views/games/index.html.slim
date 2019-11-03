@@ -1,45 +1,49 @@
 - content_for :title, 'Games'
-h1
-  | Games
-table
-  tbody[data-controller="game"]
-    - @games.each do |game|
-      tr.uk-grid
-        td.uk-width-1-10
-          | <img src="
-          = game.home_team_logo
-          | "><img src="
-          = game.away_team_logo
-          | ">
-        td.uk-width-2-10.align-left
-          span.blue
-            = game.title
-          time.secondary-text
-            = game.game_time.to_s(:custom)
-        td.uk-width-1-10
-          = number_to_human(game.reach)
-          span.secondary-text
-            | Reach
-        td.uk-width-1-10
-          = game.league
-          span.secondary-text
-            | League
-        td.uk-width-1-10
-          = game.channel
-          span.secondary-text
-            | Channel
-        td.uk-width-2-10.price
-          = number_to_currency(game.price_per_minute, precision: 0)
-          |  / min
-        td.uk-width-1-10.uk-width-extra[data-game-id= game.id data-update-url= game_path(game)]
-          button.counter[type="button" data-action="game#decrement"]
-            | -
-          .counter.counter-black[data-price-per-minute= game.price_per_minute data-target="game.minutesBooked"]
-            = game.minutes_booked
-          button.counter[type="button" data-action="game#increment"]
-            | +
-section.bottom
-  output#final-price
-    | Add minutes to your campaign
-  button#js-checkout.button[type="button"]
-    | Proceed to checkout
+
+main
+  h1
+    | Games
+  table
+    tbody[data-controller="game"]
+      - @games.each do |game|
+        tr.uk-grid
+          td.uk-width-1-10
+            | <img src="
+            = game.home_team_logo
+            | "><img src="
+            = game.away_team_logo
+            | ">
+          td.uk-width-2-10.align-left
+            span.blue
+              = game.title
+            time.secondary-text
+              = game.game_time.to_s(:custom)
+          td.uk-width-1-10
+            = number_to_human(game.reach)
+            span.secondary-text
+              | Reach
+          td.uk-width-1-10
+            = game.league
+            span.secondary-text
+              | League
+          td.uk-width-1-10
+            = game.channel
+            span.secondary-text
+              | Channel
+          td.uk-width-2-10.price
+            = number_to_currency(game.price_per_minute, precision: 0)
+            |  / min
+          td.uk-width-1-10.uk-width-extra[data-game-id= game.id data-update-url= game_path(game)]
+            button.counter[type="button" data-action="game#decrement"]
+              | -
+            .counter.counter-black[data-price-per-minute= game.price_per_minute data-target="game.minutesBooked"]
+              = game.minutes_booked
+            button.counter[type="button" data-action="game#increment"]
+              | +
+footer
+  div.bottom-parent
+    section.bottom
+      output#final-price
+        | Add minutes to your campaign
+      button#js-checkout.button[type="button"]
+        | Proceed to checkout

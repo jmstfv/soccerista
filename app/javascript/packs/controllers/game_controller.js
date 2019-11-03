@@ -77,6 +77,7 @@ export default class extends Controller {
     }).then((response) => { console.log(response); })
   }
 
+  // this function does too much, refactor animation into its own function.
   calculateFinalPrice() {
     let totalMinutesBooked = 0;
     let finalPrice = 0;
@@ -87,8 +88,35 @@ export default class extends Controller {
     });
 
     if (parseInt(finalPrice) !== 0) {
+      // only run this animation once (when going from 0 to 1+ minutes)
+      if (document.querySelector('#js-checkout').disabled) {
+        // This (i.e. style injection) won't work if you have a strict Content Security Policy on the site
+        // slowly fade-out old container (using CSS transitions)
+        document.querySelector('.bottom-parent').style.height = 0;
+
+        // this will be injected as a new container
+        let bottomClone = document.querySelector('.bottom-parent').cloneNode(true);
+
+        setTimeout(() => {
+          // inject a new container, still invisible
+          document.querySelector('.bottom-parent').insertAdjacentElement('afterend', bottomClone);
+
+          // set desired values
+          bottomClone.querySelector('#final-price').textContent = `${totalMinutesBooked} min added · total $${finalPrice}`;
+          bottomClone.querySelector('#js-checkout').disabled = false;
+          // then, slowly increase new element's height
+          bottomClone.style.height = '75px';
+
+          // wait till the CSS transition is over and remove old container from the DOM tree
+          // because its children interfere with a new container's children
+          // Admittedly, this is a hack. There should be a better way of doing it
+          // known issue: when you try to add time too fast, it might show them incorrectly for a split of the second
+          setTimeout(() => { document.querySelector('.bottom-parent').remove(); }, 400);
+        },
+        100)
+      }
+
       document.querySelector('#final-price').textContent = `${totalMinutesBooked} min added · total $${finalPrice}`;
-      document.querySelector('#js-checkout').disabled = false;
     } else {
       document.querySelector('#final-price').textContent = 'Add minutes to your campaign';
       document.querySelector('#js-checkout').disabled = true;
