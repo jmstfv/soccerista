@@ -14,7 +14,7 @@ export default class extends Controller {
     let minutesBooked = 0;
     let minutesBookedElement = null;
 
-    this.minutesBookedTargets.forEach((element, _index) => {
+    this.minutesBookedTargets.forEach((element) => {
       // storing data on the parent element so that actions and targets could get access to it
       if (element.parentNode.dataset.gameId == event.currentTarget.parentNode.dataset.gameId) {
         minutesBooked = parseInt(element.textContent) + 1;
@@ -50,7 +50,7 @@ export default class extends Controller {
     let minutesBooked = 0;
     let minutesBookedElement = null;
 
-    this.minutesBookedTargets.forEach((element, _index) => {
+    this.minutesBookedTargets.forEach((element) => {
       if (element.parentNode.dataset.gameId == event.currentTarget.parentNode.dataset.gameId) {
         minutesBooked = parseInt(element.textContent) - 1;
         minutesBookedElement = element;
@@ -81,7 +81,7 @@ export default class extends Controller {
     let totalMinutesBooked = 0;
     let finalPrice = 0;
 
-    this.minutesBookedTargets.forEach((element, _index) => {
+    this.minutesBookedTargets.forEach((element) => {
       totalMinutesBooked += parseInt(element.textContent);
       finalPrice += (parseInt(element.textContent) * parseInt(element.dataset.pricePerMinute));
     });
