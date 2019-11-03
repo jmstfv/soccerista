@@ -1,8 +1,8 @@
 Game.create!(
   title: 'Napoli - Bologna',
   league: 'Serie A',
-  home_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u24.png?token=8bdbd3569363300ad7939f3be3e9e91ccd13bb2565db7784555975db4a08e2b5',
-  away_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u27.png?token=c76354d088b42b0bc33c6d569585416130a1d4f53f0325c5a276dfb35d66dc00',
+  home_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u24.png?token=59f5c65af334a2b942d11bcbe1dec526a9991166204f83ac1141f09ea104b190',
+  away_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u27.png?token=4b3054382457391ec989c3113911baf2b66803b66a656c4c00a096251123c880',
   game_time: Time.zone.local(2018, 2, 11, 14, 30),
   channel: 'Rai1',
   reach: '4_000_000',
@@ -12,8 +12,8 @@ Game.create!(
 
 Game.create!(
   title: 'Udinese - Spal',
-  home_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u25.png?token=509214caa34309787f7a47cbe8dec6a65a2e4e0e49cf77ecf6adce6ef0c0e167',
-  away_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u28.png?token=4d8fee8d07105dad0223e8ae23cc2066b782482937fde8b353f6d1bb7c356d3c',
+  home_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u25.png?token=0e850f1c2f4d1bfa1aa6cd1968134b8bba024da779ecfb552f3e162f66174294',
+  away_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u28.png?token=b71da6c43daafaa56a69be9d4582a2b7b5e57630e27a0da49c4f3c5af114ca10',
   game_time: Time.zone.local(2018, 2, 11, 14, 30),
   league: 'Serie A',
   channel: 'Rai1',
@@ -24,8 +24,8 @@ Game.create!(
 
 Game.create!(
   title: 'Juventus - Genoa',
-  home_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u26.jpg?token=26849654000f0c7fac682374bc8384c35c3cc01087a7946dd93e30ad78bbcaf9',
-  away_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u29.png?token=ce9fae01642810cce5731e26343f573621becd27ef5ad7c0a7400aaa25bac552',
+  home_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u26.jpg?token=df79bd0e91fd3adc021a446368dd809d60c2e4d0885768f74bad2bb9e1ac4f86',
+  away_team_logo: 'https://d1icd6shlvmxi6.cloudfront.net/gsc/1J0N7O/63/4e/ea/634eeaeb893248d1a4de81afa3d03e55/images/wireframes/u29.png?token=20b3ec0d648199c3ae7fe7b8c60fe2a7903c4be889f07e841863ac9bcdfcfaa4',
   game_time: Time.zone.local(2018, 2, 11, 14, 30),
   league: 'Serie A',
   channel: 'Rai1',
