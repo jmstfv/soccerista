@@ -25,7 +25,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;  /* scaling down so that 1rem equals to 10px */
+  font-size: 62.5%;  // scaling down so that 1rem equals to 10px
 }
 
 body {
@@ -116,7 +116,7 @@ td {
   display: inline-block;
   font-size: 1.6rem;
   font-weight: 700;
-  line-height: inherit; /* overwriting normalize.css */
+  line-height: inherit; // overwriting normalize.css
   min-width: 22rem;
   padding: 1rem;
   text-align: center;
