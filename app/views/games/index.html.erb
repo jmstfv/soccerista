@@ -1,0 +1,34 @@
+<% content_for :title, 'Games' %>
+
+<main>
+  <h1>Games</h1>
+
+  <table>
+    <tbody data-controller="game">
+    <% @games.each do |game| %>
+      <tr class="uk-grid">
+        <td class="uk-width-1-10"><img src="<%= game.home_team_logo %>"><img src="<%= game.away_team_logo %>"></td>
+        <td class="uk-width-2-10 align-left"><span class="blue"><%= game.title %></span><time class="secondary-text"><%= game.game_time.to_s(:custom) %></time></td>
+        <td class="uk-width-1-10"><%= number_to_human(game.reach) %><span class="secondary-text">Reach</span></td>
+        <td class="uk-width-1-10"><%= game.league %><span class="secondary-text">League</span></td>
+        <td class="uk-width-1-10"><%= game.channel %><span class="secondary-text">Channel</span></td>
+        <td class="uk-width-2-10 price"><%= number_to_currency(game.price_per_minute, precision: 0) %> / min</td>
+        <td class="uk-width-1-10 uk-width-extra" data-game-id="<%= game.id %>" data-update-url="<%= game_path(game) %>">
+          <button class="counter" type="button" data-action="game#decrement">-</button>
+          <div class="counter counter-black" data-price-per-minute="<%= game.price_per_minute %>" data-target="game.minutesBooked"><%= game.minutes_booked %></div>
+          <button class="counter" type="button" data-action="game#increment">+</button>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</main>
+
+<footer>
+  <div class="bottom-parent">
+    <section class="bottom">
+      <output id="final-price">Add minutes to your campaign</output>
+      <button id="js-checkout" type="button" class="button">Proceed to checkout</button>
+    </section>
+  </div>  
+</footer>
